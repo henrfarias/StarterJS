@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios Starter JS</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="sistemaNotas.css">
+  </head>
+  <body>
+    <section class="gradeSyst">
+      <form class="studentGrade">
+        <div class="labelData">
+        <label class="gradeLabel" for="name">Nome do Aluno</label>
+        <label class="gradeLabel" for="math">Matemática</label>
+        <label class="gradeLabel" for="language">Português</label>
+        <label class="gradeLabel" for="science">Ciências</label>
+        </div>
+        <div class="inputData">
+        <input class="learnerName" id="name" name="name" required>
+        <input class="data math" type="number" id="math" name="math" required>
+        <input class="data lang" type="number" id="language" name="language" required>
+        <input class="data science" type="number" id="science" name="science" required>
+        </div>
+        <button id="calcGrade" type="submit">Conferir</button>
+      </form>
+      <span id="invisible" class="invisible">Por favor, preencha a nota de 0 a 100 nos campos.</span>
+    </section>
+
+    <script src="sistemaNotas.js"></script>
+  </body>
+</html>

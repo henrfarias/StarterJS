@@ -1,0 +1,46 @@
+.gradeSyst {
+  display: flex;
+  align-items: center;
+  background: gainsboro;
+  height: 15rem;
+  position: relative;
+  width: 100vw;
+}
+
+.studentGrade {
+  display: flex;
+}
+
+.labelData, .inputData {
+  display: flex;
+  flex-direction: column; 
+}
+
+.labelData {
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.gradeLabel, .learnerName, .data {
+  height: 1.2rem;
+  padding: .2rem .5rem;
+  margin: .2rem 0;
+}
+
+#calcGrade {
+  height: 2rem;
+  align-self: flex-end;
+  margin-left: 1.2rem;
+  color: #555;
+  background: #FEFEFE;
+  border-radius: .25rem;
+  border: solid #999 .5px;
+}
+
+.invalid {
+  border: solid #e60000 1.5px;
+}
+
+.invisible {
+  display:none;
+}
