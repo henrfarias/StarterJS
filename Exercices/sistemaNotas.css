@@ -1,6 +1,7 @@
 .gradeSyst {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background: gainsboro;
   height: 15rem;
   position: relative;
@@ -27,6 +28,10 @@
   margin: .2rem 0;
 }
 
+.data {
+  width: 2.5rem;
+}
+
 #calcGrade {
   height: 2rem;
   align-self: flex-end;
@@ -41,6 +46,18 @@
   border: solid #e60000 1.5px;
 }
 
-.invisible {
+.invisible, .table {
   display:none;
+}
+
+.setTable {
+  border: solid #555 1px;
+  text-align: center;  
+  margin: 0 5rem;
+}
+
+.setTable tr {
+  border: solid #555 1px;
+  margin: 1px 0;
+
 }

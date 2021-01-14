@@ -14,6 +14,10 @@ let addGrade = document.querySelector("#calcGrade");
 let math = document.querySelector("#math");
 let lang = document.querySelector("#language");
 let science = document.querySelector("#science");
+let table = document.querySelector("#table");
+let bodyT = document.querySelector("bodyT");
+
+
 
 addGrade.addEventListener("click", function(event){
   event.preventDefault();
@@ -23,14 +27,21 @@ addGrade.addEventListener("click", function(event){
   let learner = createStudent(form);  
   let test = verifyStudent(learner);  
   let empty = filled(learner);
-  // restart(learner);
+  
   if(test == false || empty == true){
     span.classList.remove("invisible");
-  }
-  else{
-    span.classList.add("invisible");
-    restart(learner);
-    console.log("Enviado");
+  }  else{
+      span.classList.add("invisible");
+      table.classList.remove("table");
+      cleanerStats(learner);
+      let conceptMath = gradeConverter(learner.math);
+      let conceptLang = gradeConverter(learner.lang);
+      let conceptScience = gradeConverter(learner.science);
+      inputName(learner.name);
+      inputTable(conceptMath, "#mathTr");
+      inputTable(conceptLang, "#langTr");
+      inputTable(conceptScience, "#scienceTr");
+      form.reset();
   }
 
 })
@@ -81,7 +92,7 @@ function filled(learner){
   return(empty);
 }
 
-function restart(learner) {
+function cleanerStats(learner) {
   
   if(learner.math.length > 0){
     math.classList.remove("invalid");
@@ -95,4 +106,35 @@ function restart(learner) {
     science.classList.remove("invalid");
     test = verifyStudent(learner);
   }
+}
+
+function inputTable(lesson, id) {
+  let makeTd = document.querySelector(id);
+  let note = document.createElement("td");
+  note.textContent = lesson;
+  makeTd.appendChild(note);
+}
+
+function inputName(name) {
+  let makeTh = document.querySelector("#nameTh")
+  makeTh.textContent = name;
+
+}
+
+function gradeConverter(grade) {
+  let concept;
+
+  if(grade < 60){
+    concept = "F";
+  }else if(grade >= 60 && grade < 70) {
+    concept = "D";
+  }else if(grade >= 70 && grade < 80) {
+    concept = "C";
+  }else if(grade >= 80 && grade < 90) {
+    concept = "B";
+  }else {
+    concept = "A";
+  }
+
+  return(concept);
 }
